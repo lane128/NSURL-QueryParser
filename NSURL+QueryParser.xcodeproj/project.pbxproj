@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		66019B18279590F4008BC77B /* UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66019B17279590F4008BC77B /* UnitTests.m */; };
 		66019B1F2795917A008BC77B /* NSURL+QueryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66019B1E2795917A008BC77B /* NSURL+QueryParser.m */; };
+		66C8B118279A9C6F00B55D95 /* NSURL+QueryParser.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 66C8B115279A9C6F00B55D95 /* NSURL+QueryParser.podspec */; };
+		66C8B119279A9C6F00B55D95 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 66C8B116279A9C6F00B55D95 /* README.md */; };
+		66C8B11A279A9C6F00B55D95 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 66C8B117279A9C6F00B55D95 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +19,9 @@
 		66019B17279590F4008BC77B /* UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTests.m; sourceTree = "<group>"; };
 		66019B1D2795917A008BC77B /* NSURL+QueryParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+QueryParser.h"; sourceTree = "<group>"; };
 		66019B1E2795917A008BC77B /* NSURL+QueryParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+QueryParser.m"; sourceTree = "<group>"; };
+		66C8B115279A9C6F00B55D95 /* NSURL+QueryParser.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NSURL+QueryParser.podspec"; sourceTree = "<group>"; };
+		66C8B116279A9C6F00B55D95 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		66C8B117279A9C6F00B55D95 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,9 @@
 		66019B09279590DC008BC77B = {
 			isa = PBXGroup;
 			children = (
+				66C8B117279A9C6F00B55D95 /* LICENSE */,
+				66C8B115279A9C6F00B55D95 /* NSURL+QueryParser.podspec */,
+				66C8B116279A9C6F00B55D95 /* README.md */,
 				66019B1C27959120008BC77B /* Classs */,
 				66019B16279590F4008BC77B /* UnitTests */,
 				66019B15279590F4008BC77B /* Products */,
@@ -120,6 +129,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C8B11A279A9C6F00B55D95 /* LICENSE in Resources */,
+				66C8B119279A9C6F00B55D95 /* README.md in Resources */,
+				66C8B118279A9C6F00B55D95 /* NSURL+QueryParser.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
