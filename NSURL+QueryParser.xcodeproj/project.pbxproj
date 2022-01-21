@@ -41,7 +41,7 @@
 				66C8B117279A9C6F00B55D95 /* LICENSE */,
 				66C8B115279A9C6F00B55D95 /* NSURL+QueryParser.podspec */,
 				66C8B116279A9C6F00B55D95 /* README.md */,
-				66019B1C27959120008BC77B /* Classs */,
+				66019B1C27959120008BC77B /* NSURL+QueryParser */,
 				66019B16279590F4008BC77B /* UnitTests */,
 				66019B15279590F4008BC77B /* Products */,
 			);
@@ -63,13 +63,13 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
-		66019B1C27959120008BC77B /* Classs */ = {
+		66019B1C27959120008BC77B /* NSURL+QueryParser */ = {
 			isa = PBXGroup;
 			children = (
 				66019B1D2795917A008BC77B /* NSURL+QueryParser.h */,
 				66019B1E2795917A008BC77B /* NSURL+QueryParser.m */,
 			);
-			path = Classs;
+			path = "NSURL+QueryParser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
