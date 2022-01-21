@@ -8,7 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "NSURL+QueryParser.h"
 
-static NSString *const uq_URLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
+static NSString *const kURLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 
 @interface UnitTests : XCTestCase
 
@@ -16,15 +16,7 @@ static NSString *const uq_URLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 
 @implementation UnitTests
 
-- (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-}
-
-- (void)testExample {
+- (void)testURLStringQueryExample {
     NSString *url = @"gm://www.sample.com/flutter/#/container?a=1=1=2=3===1&b=abc&efg";
     NSDictionary *assetDict = url.qp_queryDictionary;
     NSDictionary *predictDict = @{
@@ -122,7 +114,7 @@ static NSString *const uq_URLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 }
 
 - (void)testShouldEncodeValuesContainingReservedCharacters {
-    NSDictionary *dict = @{@"q": @"gin & tonic", @"other": uq_URLReservedChars};
+    NSDictionary *dict = @{@"q": @"gin & tonic", @"other": kURLReservedChars};
     
     XCTAssertEqualObjects([@"http://www.foo.com/".qp_URL qp_appendingQueryDictionary:dict].absoluteString,
                           @"http://www.foo.com/?q=gin%20&%20tonic&other=%EF%BF%BC=,!$&'()*+;@?%0D%0A%22%3C%3E%23%09%20:/",
@@ -130,7 +122,7 @@ static NSString *const uq_URLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 }
 
 - (void)testShouldEncodeKeysContainingReservedCharacters {
-    NSDictionary *dict = @{ uq_URLReservedChars: @YES};
+    NSDictionary *dict = @{ kURLReservedChars: @YES};
     
     XCTAssertEqualObjects([@"http://www.foo.com/".qp_URL qp_appendingQueryDictionary:dict].absoluteString,
                           @"http://www.foo.com/?%EF%BF%BC=,!$&'()*+;@?%0D%0A%22%3C%3E%23%09%20:/=1",
