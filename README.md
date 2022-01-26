@@ -16,7 +16,7 @@ Just add `NSURL-QueryParser` .h and .m file in to your project.
 
 # Usage
 ```objective-c
-    NSString *url = @"demo://www.sample.com/flutter/container?a=1&b=2&c";
+    NSString *url = @"demo://www.sample.com/flutter/#/container?a=1&b=2&c";
     NSDictionary *queryDict = url.qp_queryDictionary;
     // queryDict = @{@"a": @"1", @"b": @"2", @"c": [NSNull null]}
     queryDict = queryDict.qp_removeNullValues;
@@ -28,7 +28,7 @@ Just add `NSURL-QueryParser` .h and .m file in to your project.
     NSURL *URL = url.qp_URL;
     // convert url string to NSURL object if it is valid url string
     URL = [URL qp_appendingQueryDictionary:@{@"d": @"4"}];
-    // demo://www.sample.com/flutter/container?a=1&b=2&c&d=4
+    // demo://www.sample.com/flutter/#/container?a=1&b=2&c&d=4
 ```
 
 # Unit Tests
