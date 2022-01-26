@@ -7,7 +7,7 @@ Supports multiple methods for installing the library in a project.
 # Installation with CocoaPods
 To integrate NSURL-QueryParser into your Xcode project using CocoaPods, specify it in your Podfile:
 ```ruby
-pod 'NSURL-QueryParser', '1.0.0'
+pod 'NSURL-QueryParser'
 ```
 
 # Installation with source file
@@ -33,6 +33,10 @@ Just add `NSURL-QueryParser` .h and .m file in to your project.
 
 # Unit Tests
 NSURL-QueryParser includes a suite of unit tests within the UnitTests subdirectory. These tests can be run simply be executed the test action you would like to test.
+
+# Fix
+## 1.0.1
+* Fix url contains web router hash '#', query append in wrong location issue.
 
 # License
 AFNetworking is released under the MIT license. See [LICENSE](https://github.com/lane128/NSURL-QueryParser/blob/develop/LICENSE) for details.
