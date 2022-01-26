@@ -16,6 +16,28 @@ static NSString *const kURLReservedChars =  @"￼=,!$&'()*+;@?\r\n\"<>#\t :/";
 
 @implementation UnitTests
 
+- (void)testDemo {
+    NSString *url = @"demo://www.sample.com/flutter/#/container?a=1&b=2&c";
+    NSDictionary *queryDict = url.qp_queryDictionary;
+    // queryDict = @{@"a": @"1", @"b": @"2", @"c": [NSNull null]}
+    queryDict = queryDict.qp_removeNullValues;
+    // queryDict = @{@"a": @"1", @"b": @"2"}
+    NSString *noQueryUrl = url.qp_removeQuery;
+    // noQueryUrl = @"demo://www.sample.com/flutter/#/container"
+    NSString *queryString = url.qp_queryString;
+    // queryString = @"a=1&b=2&c"
+    NSURL *URL = url.qp_URL;
+    // convert url string to NSURL object if it is valid url string
+    URL = [URL qp_appendingQueryDictionary:@{@"d": @"4"}];
+    // demo://www.sample.com/flutter/#/container?a=1&b=2&c&d=4
+    
+    NSDictionary *predictQueryDict = @{@"a": @"1", @"b": @"2"};
+    XCTAssertEqualObjects(queryDict, predictQueryDict, @"Did not return corrent keys/values");
+    XCTAssertEqualObjects(noQueryUrl, @"demo://www.sample.com/flutter/#/container", @"Did not equal url string");
+    XCTAssertEqualObjects(queryString, @"a=1&b=2&c", @"Did not equal url string");
+    XCTAssertEqualObjects(URL, [NSURL URLWithString:@"demo://www.sample.com/flutter/#/container?a=1&b=2&c&d=4"], @"Did not equal NSURL object");
+}
+
 - (void)testURLStringQueryExample {
     NSString *url = @"gm://www.sample.com/flutter/#/container?a=1=1=2=3===1&b=abc&efg";
     NSDictionary *assetDict = url.qp_queryDictionary;

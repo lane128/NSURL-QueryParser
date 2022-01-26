@@ -8,6 +8,7 @@
 
 #import "NSURL+QueryParser.h"
 
+static NSString * const kForwardSlash        = @"/";
 static NSString * const kQuerySeparator      = @"&";
 static NSString * const kQueryDivider        = @"=";
 static NSString * const kQueryBegin          = @"?";
@@ -152,6 +153,9 @@ static NSString * const kFragmentSeparator   = @"#";
     } else if (fragmentArray.count == 1) {
         return [NSString stringWithFormat:@"%@%@%@", fragmentArray[0], kQueryBegin, queryString];
     } else if (fragmentArray.count == 2) {
+        if ([fragmentArray[1] hasPrefix:kForwardSlash]) {
+            return [NSString stringWithFormat:@"%@%@%@%@%@", fragmentArray.firstObject, kFragmentSeparator, fragmentArray.lastObject, kQueryBegin, queryString];
+        }
         return [NSString stringWithFormat:@"%@%@%@%@%@", fragmentArray.firstObject, kQueryBegin, queryString, kFragmentSeparator, fragmentArray.lastObject];
     } else {
         NSArray<NSString *> *tempFragmentsArray = [fragmentArray subarrayWithRange:NSMakeRange(0, fragmentArray.count - 1)];
