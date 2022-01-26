@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name          = "NSURL+QueryParser"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.1"
   spec.summary       = "Extensions working with URL, UrlString query"
   spec.description   = "NSURL, NSString and NSDictionary categories to deal with query part"
   spec.homepage      = "https://github.com/lane128/NSURL-QueryParser"
